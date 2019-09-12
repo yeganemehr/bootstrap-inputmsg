@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-inputmsg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add error to inputs in bootstrap style",
   "homepage": "https://git.jeyserver.com/yeganemehr/bootstrap-inputmsg",
   "license": "MIT",
@@ -17,11 +17,12 @@
     "url": "https://git.jeyserver.com/yeganemehr/bootstrap-inputmsg.git"
   },
   "dependencies": {
-    "typescript": "^2.2.1",
-    "jquery":"^3.2.1"
+    "jquery": "*"
   },
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "devDependencies": {
+    "typescript": "^2.2.1",
+    "@types/jquery": "*"
+  },
+  "main": "index.js",
+  "types": "index.d.ts"
 }

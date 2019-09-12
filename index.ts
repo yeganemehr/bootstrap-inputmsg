@@ -1,7 +1,7 @@
 /// <reference path="./index.d.ts"/>
 
 import * as $ from "jquery";
-function inputMsg(options:Options|string){
+function inputMsg(options:Options|string) {
 	function removeClasses(parent){
 		parent.removeClass('has-error');
 		parent.removeClass('has-success');
@@ -9,27 +9,27 @@ function inputMsg(options:Options|string){
 		parent.removeClass('has-info');
 	}
 	function addMessage(element:JQuery, options:Options){
-		if(!options.type){
+		if (!options.type) {
 			options.type = "error";
 		}
-		element.each(function(){
-			const $parent = $(this).parent();
+		element.each(function() {
+			const $parent = $(this).parents(".form-group");
 			removeClasses($parent);
-			$parent.addClass("has-"+options.type);
+			$parent.addClass("has-" + options.type);
 			$('.help-block',$parent).remove();
-			$(this).after(`<span class="help-block">${options.message}</span>`);
+			$parent.append("<span class=\"help-block\">" + options.message + "</span>");
 		});
 	}
 	function reset(element:JQuery){
 		element.each(function(){
-			const $parent = $(this).parent();
+			const $parent = $(this).parents(".form-group");
 			removeClasses($parent);
 			$('.help-block',$parent).remove();
 		});
 	}
-	if(typeof options == "object"){
+	if (typeof options == "object") {
 		addMessage(this,options);
-	}else{
+	} else {
 		reset(this);
 	}
 }
